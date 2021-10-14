@@ -4,12 +4,16 @@ const fetch = require('node-fetch-cache')
 
 const router = express.Router()
 
+const getRandomInt = (max) => {
+  return Math.floor(Math.random() * max);
+}
+
 const getMinisters = (data) => {
   return get(data, 'links.ministers')
 }
 
 const getRandomMinister = (ministers) => {
-  return ministers[12]
+  return ministers[getRandomInt(489)]
 }
 
 const getRole = (minister) => {
